@@ -1,0 +1,26 @@
+Step 1: Upon logging into your Amazon Management Console, navigate to and select "Amazon S3."
+Step 2: Click on "Create Bucket" and assign a name to the bucket.
+
+Note: Ensure that the bucket name and domain name match if you plan to host a demo website on your domain. Mismatched names may cause hosting issues.
+
+Step 3: Scroll down in the "Block Public Access settings for this bucket" section, uncheck "Block all public access," and acknowledge the potential public access implications by checking the corresponding box. Leave the remaining settings as default.
+Step 4: Click on "Create Bucket."
+Step 5: Access the bucket you created and upload the test files provided in the GitHub repo. Click "Upload."
+Step 6: Navigate to your bucket's properties, enable "Static website hosting" and set the "Index document" to "index.html." Save changes.
+Step 7: Inside S3, select your bucket and navigate to "Permissions." Scroll down.
+Step 8: In the Bucket Policy section, click "Edit" and paste the bucket policy provided in the GitHub repo. Ensure to replace "Bucket-name" with your bucket's actual name.
+
+Note: You've now deployed the necessary components for web hosting but haven't yet connected it to a DNS.
+
+Step 9: Search for "Route53" and click on it. In the Route53 Dashboard, locate "Hosted Zone."
+
+Note: If you don't have a DNS already, you can purchase one, such as "example.click," which is an affordable option AWS offers for one year, typically around Rs300.
+
+Step 10: Select your domain name and click on "Create record." Choose "Simple Routing" and proceed.
+Step 11: In the "Define Simple Record" section, select "Alias to S3 website endpoint."
+Step 12: Choose the region where your S3 bucket is hosted, and the S3 endpoint should automatically appear if previous steps were completed correctly.
+Step 13: Uncheck "Evaluate target health" and click "Create Record."
+
+Note: Your website will be hosted successfully with your own domain name within a few seconds.
+
+Thank you! Congratulations on hosting your own demo website.
